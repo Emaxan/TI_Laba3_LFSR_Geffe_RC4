@@ -1,0 +1,53 @@
+﻿<Window x:Class="TI_Laba3.Key"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SourceText" Height="280" Width="425"
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+    <Grid>
+        <Path Stroke="Transparent">
+
+            <Path.Fill>
+                <LinearGradientBrush StartPoint="0.2,0" EndPoint="0.8,1" >
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FFFFFFFF"  Offset="0"></GradientStop>
+                        <GradientStop Color="#FFD5F5FF"  Offset="0.33"></GradientStop>
+                        <GradientStop Color="#FF87E2FF" Offset="0.75"></GradientStop>
+                        <GradientStop Color="#FF00C4FF" Offset="1"></GradientStop>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Path.Fill>
+
+            <Path.Data>
+                <PathGeometry>
+                    <PathGeometry.Figures>
+                        <PathFigure StartPoint="20,0" IsClosed="True">
+                            <LineSegment Point="210,0"></LineSegment>
+                            <ArcSegment Point="230,20" Size="20,20" SweepDirection="Clockwise"></ArcSegment>
+                            <LineSegment Point="230,60"></LineSegment>
+                            <ArcSegment Point="210,80" Size="20,20" SweepDirection="Clockwise"></ArcSegment>
+                            <LineSegment Point="120,80"></LineSegment>
+                            <LineSegment Point="110,100"></LineSegment>
+                            <LineSegment Point="100,80"></LineSegment>
+                            <LineSegment Point="20,80"></LineSegment>
+                            <ArcSegment Point="0,60" Size="20,20" SweepDirection="Clockwise"></ArcSegment>
+                            <LineSegment Point="0,20"></LineSegment>
+                            <ArcSegment Point="20,0" Size="20,20" SweepDirection="Clockwise"></ArcSegment>
+                        </PathFigure>
+                    </PathGeometry.Figures>
+                </PathGeometry>
+            </Path.Data>
+            
+            <Path.RenderTransform>
+                <ScaleTransform ScaleX="1.85" ScaleY="2.8"></ScaleTransform>
+            </Path.RenderTransform>
+        </Path>
+        <TextBlock Text="Key"  HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" FontFamily="Mia's Scribblings ~" FontSize="40" MouseDown="UIElement_OnMouseDown" />
+        <TextBox x:Name="TbText" Background="Transparent" BorderThickness="0" Margin="0,50,0,105" FontSize="20" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+        <GroupBox Margin="10,180,0,58" BorderThickness="0">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="RbText" Content="Text" Margin="10,0,10,0" Background="Transparent" FontFamily="Mia's Scribblings ~" FontSize="30" HorizontalAlignment="Left" Checked="RbText_OnChecked"/>
+                <RadioButton x:Name="RbBinary" Content="Binary" Margin="10,0,10,0" Background="Transparent" FontFamily="Mia's Scribblings ~" FontSize="30" HorizontalAlignment="Left" Checked="RbBinary_OnChecked"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
